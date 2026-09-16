@@ -1,0 +1,3 @@
+First, create the directory C:\Downloads\abctest. Then, create the file C:\Downloads\abctest\textvv.txt with the text 'Success' and today's date inside it.
+
+First, create the directory C:\Downloads\abctest. Then, create the file C:\Downloads\abctest\textvv.txt with the text 'Success' and today's date inside it. Additionally create another file where file size of textvv.txt is written.
