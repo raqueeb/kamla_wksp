@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html lang="{{ site.locale }}">
-<head>
-  {% include head.html %}
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} &bull; {% endif %}{{ site.title }}</title>
+    {% if page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html }}">{% endif %}
 
-  {% include header.html %}
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
-  <div id="page-wrapper">
-    <div id="main" role="main">
-      <article class="wrap">
-        <div class="inner-wrap">
-          <div id="content" class="page-content">
-            {{ content }}
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="{{ '/css/main.scss' | prepend: site.baseurl }}">
+  </head>
+
+  <body id="js-body">
+    {% include header.html %}
+
+    <div id="page-wrapper">
+      <div id="main" role="main">
+        <article class="wrap" itemscope itemtype="http://schema.org/Article">
+          <div class="page-title">
+            <h1>{{ page.title }}</h1>
           </div>
-        </div>
-      </article>
+          <div class="inner-wrap">
+            <div id="content" class="page-content" itemprop="articleBody">
+              {{ content }}
+            </div>
+          </div>
+        </article>
+      </div>
+      {% include footer.html %}
     </div>
-  </div>
 
-  {% include footer.html %}
-
-</body>
+  </body>
 </html>

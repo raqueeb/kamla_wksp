@@ -1,6 +1,9 @@
-<footer id="footer">
-  <div class="inner-wrap">
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }} | {{ site.title }}</p>
-    <p>ক্রিয়েটিভ কমন্স লাইসেন্সের আওতায়</p>
-  </div>
+<footer role="contentinfo" id="site-footer">
+  <nav role="navigation" class="menu bottom-menu">
+    <ul class="menu-item">
+      <li><a href="{{ '/' | prepend: site.baseurl }}">হোম</a></li>
+      <li><a href="{{ '/manual' | prepend: site.baseurl }}">গাইড</a></li>
+    </ul>
+  </nav>
+  <p class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
 </footer>

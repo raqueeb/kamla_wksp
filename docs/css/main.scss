@@ -1,0 +1,555 @@
+---
+sitemap: false
+---
+
+/* ==========================================================================
+   কামলা ওয়ার্কস্পেস - Main Stylesheet
+   Based on Skinny Bones Jekyll Starter (Luminous theme)
+   SiyamRupali Font + Bangla Typography
+   ========================================================================== */
+
+/* Font Face */
+@font-face {
+  font-family: "SiyamRupali";
+  src: url('../SiyamRupali.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ==========================================================================
+   Base Typography
+   ========================================================================== */
+
+body {
+  font-family: "SiyamRupali", Georgia, Times, "Times New Roman", serif;
+  color: #313130;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #ebebeb;
+}
+
+p {
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 1em;
+  > p:first-child {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+li {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  color: #313130;
+}
+h1 { font-size: 36px; }
+h2 { font-size: 32px; }
+h3 { font-size: 28px; }
+h4 { font-size: 24px; }
+h5 { font-size: 20px; }
+h6 { font-size: 18px; }
+
+/* Links */
+
+a {
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px dotted lighten(#222, 50%);
+  &:hover {
+    color: darken(#222, 20);
+    border-bottom-style: solid;
+  }
+  &:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+  }
+}
+
+/* Code */
+
+tt, code, kbd, samp, pre {
+  font-family: monospace;
+}
+pre {
+  overflow-x: auto;
+  background: lighten(#ddd, 5);
+  padding: 15px;
+  border-radius: 3px;
+}
+p code, li code {
+  font-size: 16px;
+  color: #313130;
+  white-space: nowrap;
+  margin: 0 2px;
+  padding: 0 5px;
+  border: 1px solid #ddd;
+  background-color: lighten(#000, 95);
+  border-radius: 3px;
+}
+
+/* Blockquote */
+
+blockquote {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-left: 6px solid #3498db;
+  margin: 1.5em 0;
+  p {
+    font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    font-size: 24px;
+  }
+}
+
+/* Tables */
+
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+thead tr:first-child td {
+  border-bottom: 2px solid #ddd;
+}
+th {
+  padding: 12px;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: bold;
+  text-align: left;
+  background-color: lighten(#ebebeb, 10);
+  border-bottom: 1px solid darken(#ddd, 15%);
+}
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+}
+tr, td, th {
+  vertical-align: middle;
+}
+tbody tr:hover > td, tbody tr:hover > th {
+  background-color: darken(#ebebeb, 2);
+}
+
+/* Horizontal rules */
+
+hr {
+  display: block;
+  position: relative;
+  margin: 2em 0;
+  padding: 0;
+  height: 5px;
+  border: 0;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 1px;
+    background: #ddd;
+  }
+}
+
+/* Images */
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+
+/* ==========================================================================
+   Badges (Pill-shaped, matching template)
+   ========================================================================== */
+
+.badge {
+  display: inline-block;
+  background: #000;
+  border-radius: 2em;
+  color: #fff;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: .25em 1em;
+  text-align: center;
+}
+
+.badge.inverse {
+  background: #fff;
+  color: #313130;
+}
+
+.badge.info {
+  background: #3498db;
+  color: #fff;
+}
+
+.badge.danger {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.badge.warning {
+  background: #f1c40f;
+  color: darken(#f1c40f, 60);
+}
+
+.badge.success {
+  background: #2ecc71;
+  color: darken(#2ecc71, 60);
+}
+
+/* ==========================================================================
+   Notices (Solid colored boxes, matching template)
+   ========================================================================== */
+
+@mixin notice-style($bg-color) {
+  position: relative;
+  padding: 1.5em;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 39px;
+  color: #fff;
+  background-color: $bg-color;
+  border-radius: 3px;
+  a {
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+  }
+}
+
+.notice {
+  @include notice-style(#000);
+}
+
+.notice-inverse {
+  @include notice-style(#fff);
+  color: #313130;
+  a {
+    color: #313130;
+  }
+}
+
+.notice-info {
+  @include notice-style(#3498db);
+}
+
+.notice-warning {
+  @include notice-style(#f1c40f);
+}
+
+.notice-success {
+  @include notice-style(#2ecc71);
+}
+
+.notice-danger {
+  @include notice-style(#e74c3c);
+}
+
+/* ==========================================================================
+   Layout - Masthead
+   ========================================================================== */
+
+#masthead {
+  background-color: #fff;
+  padding: 0 20px;
+  z-index: 5;
+  border-bottom: 1px solid #ddd;
+  .inner-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.site-title {
+  padding: 12px 0;
+  height: 60px;
+  text-decoration: none;
+  color: #000;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  border-bottom: none;
+  &:hover {
+    color: #000;
+    border-bottom: none;
+  }
+}
+
+/* ==========================================================================
+   Layout - Menus
+   ========================================================================== */
+
+.menu {
+  li {
+    float: left;
+    a {
+      position: relative;
+      display: block;
+      margin-right: 20px;
+      padding: 18px 0;
+      font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: none;
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 2px;
+        transition: width 0.3s;
+      }
+      &:before {
+        width: 100%;
+        background: transparent;
+      }
+      &:after {
+        width: 0;
+        background: #000;
+      }
+      &:hover:after,
+      &:active:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.top-menu {
+  .home {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Layout - Page Wrapper
+   ========================================================================== */
+
+#page-wrapper {
+  padding: 0 20px;
+  background: #fff;
+}
+
+#main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 0 60px 0;
+}
+
+.page-title {
+  margin-bottom: 30px;
+  h1 {
+    margin: 0;
+  }
+}
+
+.page-content {
+  h2 {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 1em 0;
+  }
+  ul, ol {
+    padding-left: 25px;
+    margin-bottom: 1em;
+    list-style: disc;
+  }
+  li {
+    margin-bottom: 0.3em;
+  }
+  > ul, > ol {
+    list-style: disc;
+  }
+}
+
+/* ==========================================================================
+   Layout - Footer
+   ========================================================================== */
+
+#site-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  .copyright {
+    font-size: 12px;
+    color: lighten(#000, 60);
+    a {
+      color: lighten(#000, 60);
+      text-decoration: none;
+    }
+  }
+  .bottom-menu {
+    margin-bottom: 10px;
+    ul {
+      display: flex;
+      gap: 15px;
+    }
+    a {
+      color: lighten(#000, 60);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: none;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   Download Button
+   ========================================================================== */
+
+.btn-download {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 10px 0;
+  border-bottom: none;
+  &:hover {
+    background-color: darken(#3498db, 10);
+    color: #fff;
+  }
+}
+
+/* ==========================================================================
+   TOC (Table of Contents)
+   ========================================================================== */
+
+nav.toc {
+  background: lighten(#ddd, 8);
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 15px 20px;
+  margin: 1.5em 0;
+  h2 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    border: none;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding: 4px 0;
+  }
+  a {
+    font-size: 15px;
+    color: #222;
+    &:hover {
+      color: #3498db;
+    }
+  }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  #masthead .inner-wrap {
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 0;
+  }
+  .menu li a {
+    font-size: 14px;
+    padding: 10px 0;
+    margin-right: 12px;
+  }
+  h1 { font-size: 28px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+}
+
+/* ==========================================================================
+   Transitions
+   ========================================================================== */
+
+b, i, strong, em, blockquote, p, q, span, img, h1, h2, header, input, a, tr, td {
+  transition: color 0.2s ease-out, opacity 0.2s ease-out, background 0.2s ease-out, border-color 0.2s ease-out;
+}
