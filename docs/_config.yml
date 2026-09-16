@@ -1,0 +1,36 @@
+# Site wide configuration
+
+title: "কামলা ওয়ার্কস্পেস"
+description: "এআই ও এলএলএম অ্যাপ্লিকেশন - নিজের ল্যাপটপে এআই চালানোর গাইড"
+locale: bn_BD
+
+url: "https://raqueeb.github.io"
+baseurl: "/kamla_wksp"
+
+# Jekyll configuration
+
+sass:
+  sass_dir: _sass
+  style: compressed
+permalink: /:title/
+kramdown:
+  toc_levels: 1..2
+highlighter: rouge
+plugins:
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+
+# Site owner
+owner:
+  name: "রকিবুল হাসান"
+  web: "https://raqueeb.github.io/kamla_wksp"
+
+include:
+  - .htaccess
+exclude:
+  - "*.less"
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - Gemfile
+  - Gemfile.lock

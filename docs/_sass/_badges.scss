@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Badges
+   ========================================================================== */
+
+.badges {
+  margin: 10px 0 20px 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: $badge-font-color;
+  background-color: $badge-background;
+  border-radius: $border-radius;
+  margin: 2px 4px 2px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.info {
+  background-color: $badge-info-color;
+}
+
+.badge.warning {
+  background-color: $badge-warning-color;
+  color: $black;
+}
+
+.badge.danger {
+  background-color: $badge-danger-color;
+}
+
+.badge.success {
+  background-color: $badge-success-color;
+}
