@@ -574,7 +574,7 @@ nav.toc a:hover {
   position: fixed;
   top: 1.618em;
   right: 1.618em;
-  display: block;
+  display: none;
   width: 60px;
   height: 60px;
   background: #000;
@@ -599,7 +599,7 @@ nav.toc a:hover {
   top: 0;
   right: 0;
   padding: 1.375em 0;
-  visibility: hidden;
+  display: none;
   height: 100%;
   width: 100%;
   transform: translateX(100%);
@@ -610,7 +610,7 @@ nav.toc a:hover {
   overflow-x: hidden;
 }
 .sliding-menu-content.is-visible {
-  visibility: visible;
+  display: block;
   transform: translateX(0);
 }
 .sliding-menu-content h5 {
@@ -668,11 +668,12 @@ nav.toc a:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  visibility: hidden;
+  display: none;
+  background: rgba(0,0,0,0.5);
   z-index: 4;
 }
 .menu-screen.is-visible {
-  visibility: visible;
+  display: block;
 }
 .menu-screen.is-visible:hover {
   cursor: pointer;
@@ -758,20 +759,23 @@ nav.toc a:hover {
   h1 { font-size: 28px; }
   h2 { font-size: 24px; }
   h3 { font-size: 20px; }
+}
+
+@media (max-width: 900px) {
   .top-menu {
-    display: none;
+    display: none !important;
   }
   .sliding-menu-button {
-    display: block;
+    display: block !important;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 901px) {
   .sliding-menu-button {
-    display: none;
+    display: none !important;
   }
   .top-menu {
-    display: block;
+    display: block !important;
   }
 }
 
