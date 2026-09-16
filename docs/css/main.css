@@ -1,10 +1,5 @@
----
-sitemap: false
----
-
 /* ==========================================================================
    কামলা ওয়ার্কস্পেস - Main Stylesheet
-   Based on Skinny Bones Jekyll Starter (Luminous theme)
    SiyamRupali Font + Bangla Typography
    ========================================================================== */
 
@@ -80,10 +75,6 @@ p {
   font-size: 18px;
   line-height: 28px;
   margin-bottom: 1em;
-  > p:first-child {
-    font-size: 20px;
-    line-height: 30px;
-  }
 }
 
 li {
@@ -108,15 +99,15 @@ h6 { font-size: 18px; }
 a {
   color: #222;
   text-decoration: none;
-  border-bottom: 1px dotted lighten(#222, 50%);
-  &:hover {
-    color: darken(#222, 20);
-    border-bottom-style: solid;
-  }
-  &:focus {
-    outline: 2px solid #3498db;
-    outline-offset: 2px;
-  }
+  border-bottom: 1px dotted #999;
+}
+a:hover {
+  color: #000;
+  border-bottom-style: solid;
+}
+a:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
 }
 
 /* Code */
@@ -126,7 +117,7 @@ tt, code, kbd, samp, pre {
 }
 pre {
   overflow-x: auto;
-  background: lighten(#ddd, 5);
+  background: #f5f5f5;
   padding: 15px;
   border-radius: 3px;
 }
@@ -137,7 +128,7 @@ p code, li code {
   margin: 0 2px;
   padding: 0 5px;
   border: 1px solid #ddd;
-  background-color: lighten(#000, 95);
+  background-color: #fafafa;
   border-radius: 3px;
 }
 
@@ -148,10 +139,10 @@ blockquote {
   padding-right: 20px;
   border-left: 6px solid #3498db;
   margin: 1.5em 0;
-  p {
-    font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
-    font-size: 24px;
-  }
+}
+blockquote p {
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 24px;
 }
 
 /* Tables */
@@ -169,8 +160,8 @@ th {
   font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   font-weight: bold;
   text-align: left;
-  background-color: lighten(#ebebeb, 10);
-  border-bottom: 1px solid darken(#ddd, 15%);
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #bbb;
 }
 td {
   border-bottom: 1px solid #ddd;
@@ -180,7 +171,7 @@ tr, td, th {
   vertical-align: middle;
 }
 tbody tr:hover > td, tbody tr:hover > th {
-  background-color: darken(#ebebeb, 2);
+  background-color: #e8e8e8;
 }
 
 /* Horizontal rules */
@@ -192,15 +183,15 @@ hr {
   padding: 0;
   height: 5px;
   border: 0;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 1px;
-    background: #ddd;
-  }
+}
+hr:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 1px;
+  background: #ddd;
 }
 
 /* Images */
@@ -245,59 +236,105 @@ img {
 
 .badge.warning {
   background: #f1c40f;
-  color: darken(#f1c40f, 60);
+  color: #7d6608;
 }
 
 .badge.success {
   background: #2ecc71;
-  color: darken(#2ecc71, 60);
+  color: #1a8a4a;
 }
 
 /* ==========================================================================
    Notices (Solid colored boxes, matching template)
    ========================================================================== */
 
-@mixin notice-style($bg-color) {
+.notice {
   position: relative;
   padding: 1.5em;
   font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   font-size: 14px;
   line-height: 39px;
   color: #fff;
-  background-color: $bg-color;
+  background-color: #000;
   border-radius: 3px;
-  a {
-    color: #fff;
-    border-bottom: 1px dotted #fff;
-  }
 }
-
-.notice {
-  @include notice-style(#000);
+.notice a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
 }
 
 .notice-inverse {
-  @include notice-style(#fff);
+  position: relative;
+  padding: 1.5em;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 39px;
   color: #313130;
-  a {
-    color: #313130;
-  }
+  background-color: #fff;
+  border-radius: 3px;
+}
+.notice-inverse a {
+  color: #313130;
 }
 
 .notice-info {
-  @include notice-style(#3498db);
+  position: relative;
+  padding: 1.5em;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 39px;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 3px;
+}
+.notice-info a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
 }
 
 .notice-warning {
-  @include notice-style(#f1c40f);
+  position: relative;
+  padding: 1.5em;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 39px;
+  color: #7d6608;
+  background-color: #f1c40f;
+  border-radius: 3px;
+}
+.notice-warning a {
+  color: #7d6608;
+  border-bottom: 1px dotted #7d6608;
 }
 
 .notice-success {
-  @include notice-style(#2ecc71);
+  position: relative;
+  padding: 1.5em;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 39px;
+  color: #fff;
+  background-color: #2ecc71;
+  border-radius: 3px;
+}
+.notice-success a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
 }
 
 .notice-danger {
-  @include notice-style(#e74c3c);
+  position: relative;
+  padding: 1.5em;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 39px;
+  color: #fff;
+  background-color: #e74c3c;
+  border-radius: 3px;
+}
+.notice-danger a {
+  color: #fff;
+  border-bottom: 1px dotted #fff;
 }
 
 /* ==========================================================================
@@ -309,13 +346,13 @@ img {
   padding: 0 20px;
   z-index: 5;
   border-bottom: 1px solid #ddd;
-  .inner-wrap {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+}
+#masthead .inner-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .site-title {
@@ -329,62 +366,58 @@ img {
   line-height: 30px;
   text-transform: uppercase;
   border-bottom: none;
-  &:hover {
-    color: #000;
-    border-bottom: none;
-  }
+}
+.site-title:hover {
+  color: #000;
+  border-bottom: none;
 }
 
 /* ==========================================================================
    Layout - Menus
    ========================================================================== */
 
-.menu {
-  li {
-    float: left;
-    a {
-      position: relative;
-      display: block;
-      margin-right: 20px;
-      padding: 18px 0;
-      font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 24px;
-      color: #000;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-bottom: none;
-      &:before,
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 2px;
-        transition: width 0.3s;
-      }
-      &:before {
-        width: 100%;
-        background: transparent;
-      }
-      &:after {
-        width: 0;
-        background: #000;
-      }
-      &:hover:after,
-      &:active:after {
-        width: 100%;
-      }
-    }
-  }
+.menu li {
+  float: left;
+}
+.menu li a {
+  position: relative;
+  display: block;
+  margin-right: 20px;
+  padding: 18px 0;
+  font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: none;
+}
+.menu li a:before,
+.menu li a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  transition: width 0.3s;
+}
+.menu li a:before {
+  width: 100%;
+  background: transparent;
+}
+.menu li a:after {
+  width: 0;
+  background: #000;
+}
+.menu li a:hover:after,
+.menu li a:active:after {
+  width: 100%;
 }
 
-.top-menu {
-  .home {
-    display: none;
-  }
+.top-menu .home {
+  display: none;
 }
 
 /* ==========================================================================
@@ -404,38 +437,34 @@ img {
 
 .page-title {
   margin-bottom: 30px;
-  h1 {
-    margin: 0;
-  }
+}
+.page-title h1 {
+  margin: 0;
 }
 
-.page-content {
-  h2 {
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #ddd;
-  }
-  h3 {
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    margin: 1em 0;
-  }
-  ul, ol {
-    padding-left: 25px;
-    margin-bottom: 1em;
-    list-style: disc;
-  }
-  li {
-    margin-bottom: 0.3em;
-  }
-  > ul, > ol {
-    list-style: disc;
-  }
+.page-content h2 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+}
+.page-content h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.page-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+.page-content ul,
+.page-content ol {
+  padding-left: 25px;
+  margin-bottom: 1em;
+  list-style: disc;
+}
+.page-content li {
+  margin-bottom: 0.3em;
 }
 
 /* ==========================================================================
@@ -447,30 +476,30 @@ img {
   margin: 0 auto;
   padding: 20px 0;
   font-family: "SiyamRupali", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
-  .copyright {
-    font-size: 12px;
-    color: lighten(#000, 60);
-    a {
-      color: lighten(#000, 60);
-      text-decoration: none;
-    }
-  }
-  .bottom-menu {
-    margin-bottom: 10px;
-    ul {
-      display: flex;
-      gap: 15px;
-    }
-    a {
-      color: lighten(#000, 60);
-      font-weight: 700;
-      text-decoration: none;
-      border-bottom: none;
-      &:hover {
-        color: #000;
-      }
-    }
-  }
+}
+#site-footer .copyright {
+  font-size: 12px;
+  color: #999;
+}
+#site-footer .copyright a {
+  color: #999;
+  text-decoration: none;
+}
+#site-footer .bottom-menu {
+  margin-bottom: 10px;
+}
+#site-footer .bottom-menu ul {
+  display: flex;
+  gap: 15px;
+}
+#site-footer .bottom-menu a {
+  color: #999;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: none;
+}
+#site-footer .bottom-menu a:hover {
+  color: #000;
 }
 
 /* ==========================================================================
@@ -487,10 +516,10 @@ img {
   font-weight: bold;
   margin: 10px 0;
   border-bottom: none;
-  &:hover {
-    background-color: darken(#3498db, 10);
-    color: #fff;
-  }
+}
+.btn-download:hover {
+  background-color: #2980b9;
+  color: #fff;
 }
 
 /* ==========================================================================
@@ -498,32 +527,32 @@ img {
    ========================================================================== */
 
 nav.toc {
-  background: lighten(#ddd, 8);
+  background: #f5f5f5;
   border: 1px solid #ddd;
   border-radius: 3px;
   padding: 15px 20px;
   margin: 1.5em 0;
-  h2 {
-    font-size: 18px;
-    margin: 0 0 10px 0;
-    border: none;
-    padding: 0;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  li {
-    padding: 4px 0;
-  }
-  a {
-    font-size: 15px;
-    color: #222;
-    &:hover {
-      color: #3498db;
-    }
-  }
+}
+nav.toc h2 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  border: none;
+  padding: 0;
+}
+nav.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav.toc li {
+  padding: 4px 0;
+}
+nav.toc a {
+  font-size: 15px;
+  color: #222;
+}
+nav.toc a:hover {
+  color: #3498db;
 }
 
 /* ==========================================================================
