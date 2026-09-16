@@ -18,6 +18,18 @@
   <body id="js-body">
     {% include header.html %}
 
+    <nav role="navigation" id="js-menu" class="sliding-menu-content">
+      <h5>{{ site.title }} <span></span></h5>
+      <ul class="menu-item">
+        <li><a href="{{ '/' | prepend: site.baseurl }}">হোম</a></li>
+        <li><a href="{{ '/manual' | prepend: site.baseurl }}">গাইড</a></li>
+      </ul>
+    </nav>
+    <button type="button" id="js-menu-trigger" class="sliding-menu-button lines-button x2" role="button" aria-label="Toggle Navigation">
+      <span class="nav-lines"></span>
+    </button>
+    <div id="js-menu-screen" class="menu-screen"></div>
+
     <div id="page-wrapper">
       <div id="main" role="main">
         <article class="wrap" itemscope itemtype="http://schema.org/Article">
@@ -34,5 +46,28 @@
       {% include footer.html %}
     </div>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var trigger = document.getElementById('js-menu-trigger');
+      var menu = document.getElementById('js-menu');
+      var screen = document.getElementById('js-menu-screen');
+      if (trigger && menu && screen) {
+        trigger.addEventListener('click', function(e) {
+          menu.classList.toggle('is-visible');
+          screen.classList.toggle('is-visible');
+          trigger.classList.toggle('slide');
+          trigger.classList.toggle('close');
+          e.preventDefault();
+        });
+        screen.addEventListener('click', function(e) {
+          menu.classList.toggle('is-visible');
+          screen.classList.toggle('is-visible');
+          trigger.classList.toggle('slide');
+          trigger.classList.toggle('close');
+          e.preventDefault();
+        });
+      }
+    });
+    </script>
   </body>
 </html>
